@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>PRODUCT</title>
+
+</head>
+<body>
+<ul>
+  <% cart.each do |p| %>
+    <li> <%= p %> </li>
+  <% end %>
+</ul>
+
+  <%= form_tag  '/products/add'  do %>
+    <label>Product</label><br>
+    <%= text_field_tag :product %>
+
+    <%= submit_tag :'add to cart' %>
+
+  <% end %>
+  
+</body>
+</html>
