@@ -1,0 +1,14 @@
+<h1>Add product to the cart:</h1>
+<!-- not persisting to db so use form_tag -->
+     <%= form_tag('/products/add', method: "post") do %>
+   <%= label_tag(:product, "Type the item name:") %>
+   <%= text_field_tag(:product) %>
+   <%= submit_tag("add to cart") %>
+<% end %>
+
+<h1>Contents of your cart:</h1>
+
+<% cart.each do |p| %>
+    <p><%= p %></p>
+<%end%>
+
